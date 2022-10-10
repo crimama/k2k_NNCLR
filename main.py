@@ -33,11 +33,12 @@ from utils import ResnetEncoder,ProjectionHead,PredictionHead,NNCLR
 from utils import nearest_neighbour,contrastive_loss 
 from utils import NTXentLoss
 
+from pytorch_lars import LARS 
+from info_nce import InfoNCE
+
 #memorybank 
 from utils import NNMemoryBankModule
 
-
-#하이퍼 파라미터 
 
 # 하이퍼 파라미터 
 
@@ -66,6 +67,7 @@ learning_rate = 1e-3
 device = 'cuda:0'
 feature_dimensions = 256 
 
+
 def model_save(model,model_name):
     torch.save(model,f'save_models/{model_name}')
 
@@ -82,8 +84,9 @@ if __name__ == "__main__":
     memory_bank = NNMemoryBankModule().to(device)
 
     #compile 
-    criterion = NTXentLoss()
-    optimizer = torch.optim.Adam(lr=learning_rate,params=model.parameters())
+    criterion = InfoNCE()
+    optimizer = LARS(model.parameters(),lr=learning_rate,momentum=0.9)
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer,T_max=100,eta_min=0)
 
     #Train 
     for epoch in tqdm(range(num_epochs)):

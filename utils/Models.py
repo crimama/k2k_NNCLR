@@ -81,3 +81,5 @@ class NNCLR(nn.Module):
         z = self.projection_head(x)
         p = self.prediction_head(x)
         return z,p
+
+
