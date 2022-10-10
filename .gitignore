@@ -127,17 +127,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-.tar.gz 
-*.tar.gz 
-./Data
-/Data 
-Data/ 
-
-.png 
-*.png 
-.jpg 
-*.jpg 
-
-*.pt 
-.pt 
