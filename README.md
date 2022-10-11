@@ -13,4 +13,4 @@
     python main.py 
    
 ## Example notebook 
-    Example.ipynb
+[Example](https://github.com/crimama/k2k_NNCLR/blob/main/Example.ipynb)
