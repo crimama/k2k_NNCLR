@@ -62,7 +62,7 @@ input_shape = (96,96,3)
 width = 128 
 num_epochs = 500 
 steps_per_epoch = 200 
-batch_size= 48
+batch_size= 128
 learning_rate = 1e-3 
 device = 'cuda:0'
 feature_dimensions = 256 
@@ -120,9 +120,8 @@ if __name__ == "__main__":
         if epoch == 0:
             best = epoch_loss/n
             model_save(model,model_name='best.pt')
-        else:
-            if epoch_loss/n <best:
-                model_save(model,model_name='best.pt')
-                print(f'model save at {epoch}')
+        if epoch_loss/n < best:
+            model_save(model,model_name='best.pt')
+            print(f'model save at {epoch}')
         
     
