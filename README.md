@@ -3,6 +3,7 @@
 
 ## Reference 
 해당 레퍼런스들을 참고하여 만들었습니다. 
+- Paper : https://arxiv.org/abs/2104.14548
 - keras example : https://keras.io/examples/vision/nnclr/
 - lightly : https://github.com/lightly-ai/lightly
 - LARS : https://github.com/4uiiurz1/pytorch-lars
