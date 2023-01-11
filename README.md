@@ -1,4 +1,4 @@
-# k2k_NNCLR
+# k2T_NNCLR
 - 해당 레포지토리는 고려대학교 DSBA연구실 케토투 스터디를 위해 만들어졌습니다. 
 
 ## Reference 
